@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Credit decision explanations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip2 .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent gray transparent;
+}
+
+.tooltip:hover .tooltiptext, .tooltip2:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+#float{
+    background: WhiteSmoke;
+    width:220px;
+    height:600px;
+    position:fixed;
+    top:100px;
+    left:20;
+    font-size: 11px;
+}
+
+
+.main {
+  margin-left: 240px; /* Same as the width of the sidenav */
+  
+  padding: 0px 10px;
+}
+h1{color: LightSteelBlue; text-align: center;}
+.main h2 {color: LightBlue;}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<h1>Credit decision explanations</h1>
+
+<div id="float">    
+<h2>Assessing Criteria:</h2>
+<h3>Assessing compliance</h3>
+<ul>
+<li>Is it easy to understand?</li>
+<li>Is the information concise and tailored to the recipient?</li>
+<li>Is it easily accessible?</li>
+<li>Is it user friendly?</li>
+<li>Is it provided in time for the recipient to act?</li>
+<li>Is it complete?</li>
+</ul>
+<h3>Assessing effectiveness</h3>
+<ul>
+<li>Is the information relevant and accurate?</li>
+<li>Does it allow the recipient to take action?</li>
+<li>Does it allow the recipient to access their data?</li>
+<li>Does it allow the recipient to correct a decision as appropriate?</li>
+<li>Does it allow the recipient to provide feedback?</li>
+<li>Does it integrate with existing processes?</li>
+</ul>
+
+<h2>Explanation 1 legend:</h2>
+<p style="border-left: 6px solid orange; ">Reasons for refusal</p>
+<p style="border-left: 6px solid DodgerBlue;">Data from the bank</p>
+<p style="border-left: 6px solid DarkTurquoise;">Data from the CRA</p>
+<p style="border-left: 6px solid MediumSeaGreen;">Right to rectify inaccurate data</p>
+<div style="border-left: 6px solid PaleVioletRed;">Right to request review
+<p>Right to more information</p>
+<p>Right to express point of view</p>
+</div>
+
+ </div>
+
+<div class="main">
+<div>
+<div class="tooltip"><span style="color: LightBlue; font-size:25px; font-style: italic;">Example Explanation 1</span>
+  <span class="tooltiptext">Reasons about the substance; reasons about the process; information about the recipients</span>
+</div>
+</div>
+<div style="background-color: ghostwhite;">
+	<div class="tooltip2"><p style="border-left: 6px solid orange; background-color: ghostwhite;">Your application was screened by an automated system to provide you with an instant response. We regret to inform you that your application has not been successful, because of negative credit history information on your credit report.</p>
+  <span class="tooltiptext">Reasons for refusal</span>
+</div>
+	<div class="tooltip2"><p style="border-left: 6px solid DodgerBlue; background-color: ghostwhite;">You had previously applied for our credit card plan <strong>CARD_PLAN</strong> on <strong>APPLICATION_DATE</strong>, which was refused by <strong>DECISION_NUM</strong> on grounds of affordability and has been taken into account here.</p>
+  <span class="tooltiptext">Data from the bank</span>
+</div>
+	<div class="tooltip2"><div style="border-left: 6px solid DarkTurquoise; background-color: ghostwhite;">
+<p>To perform identity matching, we received electoral register data last updated on <strong>DATE</strong> for your date of birth, and your current and previous addresses supplied by your telephone provider, last updated on <strong>DATE</strong>.</p>
+<p>We also received a credit report and credit score from CRA, which were calculated based on data last updated on <strong>DATE</strong>. The late payments <strong>DATA_1</strong>, <strong>DATA_2</strong> that impacted your credit <a href="https://scorecounter.com/">score were</a> provided by your current account provider on <strong>DATE</strong>. The missed payment <strong>DATA_3</strong> was provided by your current account provider on <strong>DATE</strong> and updated on <strong>DATE</strong>.</p>
+</div>
+  <span class="tooltiptext">Data from the CRA</span>
+</div>
+	<div class="tooltip2"><div style="border-left: 6px solid MediumSeaGreen; background-color: ghostwhite;">
+<p>If you believe there has been an issue with the data your first point of contact should be your current account provider. If you believe that the issue has been resolved but it is not yet reflected in your credit report, you may contact CRA at <strong>EMAIL_ADDR</strong>. Note that CRA advises that it can take up to 45 days for a change to be reflected in your file.</p>
+<p>If the data are correct but you believe there are special circumstances that should have been taken into account, you can ask CRA to add a &lsquo;notice of correction&rsquo; to your file including relevant information by clicking the button below.</p>
+</div>
+  <span class="tooltiptext">Right to rectify inaccurate data</span>
+</div>
+	<div class="tooltip2"><div style="border-left: 6px solid PaleVioletRed; background-color: ghostwhite;">
+<p>You can request that one of our credit officers reviews this decision by clicking the button below. You will receive details of the responsible officer and the progress of the review once the process completes. If you disagree with the decision or you believe there are special circumstances that should be taken into account, you can contact us by clicking the button below. The decision number <strong>DECISION_NUM</strong> will be included in the request automatically.</p>
+<div style="display: flex; justify-content: center;"><button type="button">Request human review</button><button type="button">Contact the bank!</button><button type="button">File a notice of correction</button></div>
+</div>
+  <span class="tooltiptext">Right to request review
+<p>Right to more information</p>
+<p>Right to express point of view</p></span>
+</div>
+
+
+
+
+
+</div>
+<p>&nbsp;</p>
+<div class="tooltip"><span style="color: LightBlue; font-size:25px; font-style: italic;">Example Explanation 2.1</span>
+  <span class="tooltiptext">Fairness and non-discrimination</span>
+</div>
+<div style="background-color: ghostwhite;">
+<p>Based on the information you have declared in your application and data that we received from our partner CRA, our recommendation is to refuse the credit agreement with the present commitments as there is high risk that it will negatively impact your finances. This recommendation did not take into account any of the protected characteristics, as defined in the Equality Act.</p>
+<p>You can explore how our recommendation would change if any of the following factors evolve.</p>
+<p><input id="Age" checked="checked" name="Age" type="checkbox" value="Age" />Age</p>
+18<input list="tickmarks" name="age" type="range" value="25" />110
+<datalist id="tickmarks">
+<option label="0" value="0"></option>
+<option value="10"></option>
+<option value="20"></option>
+<option value="30"></option>
+<option value="40"></option>
+<option label="5" value="50"></option>
+<option value="60"></option>
+<option value="70"></option>
+<option value="80"></option>
+<option value="90"></option>
+<option label="10" value="100"></option>
+</datalist>
+<p><input id="sex" checked="checked" name="sex" type="checkbox" value="sex" />Sex</p>
+<p><input id="male" name="male" type="radio" value="male" />Male <input id="female" checked="checked" name="female" type="radio" value="female" />Female <input id="other" name="other" type="radio" value="other" />Other <input id="na" name="na" type="radio" value="na" />Rather not say</p>
+<p><input id="status" checked="checked" name="status" type="checkbox" value="sex" />Marital status</p>
+<p><input id="married" name="married" type="radio" value="married" />Married <input id="single" checked="checked" name="single" type="radio" value="single" />Single <input id="partnership" name="partnership" type="radio" value="partnership" />In partnership <input id="na" name="na" type="radio" value="na" />Rather not say</p>
+<div>
+<div>
+<div style="display: flex; justify-content: center;">
+<table style="width: 29.26829268292683%; border-collapse: collapse; border-style: none;" border="0">
+<tbody>
+<tr>
+<td style="width: 15.290806754221386%; text-align: right; font-size: 20px;">Verdict:</td>
+<td style="width: 13.977485928705448%; background-color: tomato; color: red; font-size: 20px;"><strong>REJECT</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div class="tooltip"><span style="color: LightBlue; font-size:25px; font-style: italic;">Example Explanation 2.2</span>
+  <span class="tooltiptext">Substantive reasons</span>
+</div>
+<div style="background-color: ghostwhite;">
+Based on the information you have declared in your application and data that we received from our partner CRA, our recommendation is to refuse the credit agreement with the present commitments as there is high risk that it will negatively impact your finances. This recommendation is based on your current circumstances.
+
+<p>You can explore how our recommendation would change if any of your circumstances change.</p>
+
+<p><input id="income" checked="checked" name="income" type="checkbox" value="income" />Income</p>
+&#163;0<input list="tickmarks" name="age" type="range" value="28" />&#163;100,000
+<datalist id="tickmarks">
+<option label="0" value="0"></option>
+<option value="10"></option>
+<option value="20"></option>
+<option value="30"></option>
+<option value="40"></option>
+<option label="5" value="50"></option>
+<option value="60"></option>
+<option value="70"></option>
+<option value="80"></option>
+<option value="90"></option>
+<option label="10" value="100"></option>
+</datalist>
+<p><input id="debt" checked="checked" name="debt" type="checkbox" value="debt" />Debt account types</p>
+<p><input id="credit" name="credit" type="checkbox" value="credit" />Credit cards <input id="loan" checked="checked" name="loan" type="checkbox" value="loan" />Personal loans <input id="mortgage" name="mortgage" type="checkbox" value="mortgage" />Mortgages <input id="overdraft" name="overdraft" type="checkbox" value="overdraft" />Current account overdrafts</p>
+<p>
+  <input id="debttotal" checked="checked" name="debttotal" type="checkbox" value="debttotal" />Accumulated debt</p>
+&#163;0<input list="tickmarks" name="age" type="range" value="15" />&#163;100,000
+<datalist id="tickmarks">
+<option label="0" value="0"></option>
+<option value="10"></option>
+<option value="20"></option>
+<option value="30"></option>
+<option value="40"></option>
+<option label="5" value="50"></option>
+<option value="60"></option>
+<option value="70"></option>
+<option value="80"></option>
+<option value="90"></option>
+<option label="10" value="100"></option>
+</datalist>
+  </p>
+<div>
+<div>
+<div style="display: flex; justify-content: center;">
+<table style="width: 29.26829268292683%; border-collapse: collapse; border-style: none;" border="0">
+<tbody>
+<tr>
+<td style="width: 15.290806754221386%; text-align: right; font-size: 20px;">Verdict:</td>
+<td style="width: 13.977485928705448%; background-color: tomato; color: red; font-size: 20px;"><strong>REJECT</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
